@@ -16,3 +16,9 @@ C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\obj\Debug\BusinessLayer.c
 C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\FluentValidation.dll
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\FluentValidation.xml
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\emir_\source\repos\MvcProjeKamp\BusinessLayer\bin\Debug\System.Threading.Tasks.Extensions.xml

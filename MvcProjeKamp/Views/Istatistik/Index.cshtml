@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<br /><br /><br /><br />
+
+<div class="container">
+    <div class="row">
+        <div class="col" style="height:400px; background-color:lightseagreen">
+           <div style="text-align:center; margin-top:120px">
+                <h2>Toplam Kategori Sayısı</h2>
+                <p style="font-size:72px">
+                    @ViewBag.SumCat
+                </p>            
+           </div>
+        </div>
+        <div class="col" style="height:400px; background-color:lightpink">          
+            <div style="text-align:center; margin-top:50px">
+
+                <h2>Headings tablosunda yazılım Adı altında açılan toplam kategori sayısı</h2>
+                <p style="font-size:72px">
+                    @ViewBag.SumHeadingYazilim
+                </p>
+
+            </div>
+        </div>
+        <div class="col" style="height:400px; background-color:mediumseagreen">
+            <div style="text-align:center; margin-top:80px">
+
+                <h2>Yazar tablosunda isminde a harfi olan yazar sayısı</h2>
+                <p style="font-size:72px">
+                    @ViewBag.SumWritersContainsA
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col" style="height:400px; background-color:tomato">
+            <div style="text-align:center; margin-top:80px">
+
+                <h2>En fazla başlığa sahip kategori adı</h2>
+                <p style="font-size:72px">
+                    @ViewBag.TopOneCategoryName
+                </p>
+
+            </div>
+
+        </div>
+        <div class="col" style="height:400px; background-color:royalblue">
+            <div style="text-align:center; margin-top:0px">
+
+                <h2>
+                    Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark
+                </h2>
+                <p style="font-size:72px">
+                    @ViewBag.CatDifferenceBetweenTrueAndFalse
+                </p>
+
+            </div>
+        </div>
+        <div class="col" style="height:400px; background-color:darkkhaki">
+            <div style="text-align:center; margin-top:80px">
+
+                <h2>Udemy üzerindeki bir kursunuzda LİNQ anlatmıştınız onun faydasını burada çok net olarak gördüm :)</h2>               
+            </div>
+        </div>
+    </div>
+</div>
+
