@@ -14,6 +14,7 @@ namespace MvcProjeKamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
+        [Authorize(Roles="B")]
         public ActionResult Index()
         {
             var categoryValues = cm.GetList();
@@ -63,5 +64,6 @@ namespace MvcProjeKamp.Controllers
             cm.CategoryUpdate(p);
             return RedirectToAction("Index");
         }
+        
     }
 }

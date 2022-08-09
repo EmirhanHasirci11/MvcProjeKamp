@@ -15,6 +15,8 @@ namespace EntityLayer.Concrete
         public string CategoryName { get; set; }
         [StringLength(200)]
         public string CategoryDescription { get; set; }
+        [StringLength(8)]
+        public string CategoryColor { get; set; }
         public bool CategoryStatus { get; set; }
 
         public ICollection<Heading> Headings { get; set; }

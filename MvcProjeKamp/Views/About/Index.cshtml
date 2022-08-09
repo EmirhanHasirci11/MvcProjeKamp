@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<h2>Hakkımda Veri Listesi</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Durum</th>
+            <th>Aktif Yap</th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AboutID</td>
+                <td>Başlık</td>
+                <td> @Html.Raw(item.AboutStatus == true ? "<span class='badge badge-success'>Aktif</span>" : "<span class='badge badge-danger'>Pasif</span>")</td>
+                <td>
+                    @switch (item.AboutStatus)
+                    {
+                        case true:
+                            <a class="btn btn-danger btn-sm" href="/About/ChangeStatus/@item.AboutID">
+                                <i class="fas fa-trash">
+                                </i>
+                                Pasif Yap
+                            </a>
+                            break;
+                        case false:
+                            <a class="btn btn-success btn-sm" href="/About/ChangeStatus/@item.AboutID">
+                                <i class="fas fa-check">
+                                </i>
+                                Aktif Yap
+                            </a>
+                            break;
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+@Html.Action("AboutPartial", "About")
