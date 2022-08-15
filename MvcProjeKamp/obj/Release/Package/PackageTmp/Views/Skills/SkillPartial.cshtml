@@ -1,0 +1,25 @@
+﻿<button class=" btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Yetenek Ekle
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yetenek Ekleme paneli</h2>
+            </div>
+            <form method="post" action="/Skills/AddSkill">
+                <div class="modal-body">
+                    <label>Yetenek İsmi</label>
+                    <input type="text" name="SkillName" class="form-control" />
+                    <br />
+                    <label>Yetenek Oranı</label>
+                    <input type="text" name="SkillPercentage" class="form-control" />
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+

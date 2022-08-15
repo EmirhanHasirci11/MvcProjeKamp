@@ -1,0 +1,69 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+@{
+    ViewBag.Title = "AdminSkillList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+<!--Yetenek ekleme paneli tamamen dinamik olması için admin tarafından yapılabilmesini istedim.-->
+
+<h2>Yetenekler</h2>
+<html>
+<head>
+   
+    <title>Yetenekler</title>
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Skill ID</th>
+                <th>Skill Name</th>
+                <th>Skill Percentage</th>
+                <th>Skill Status</th>
+                <th>Change Status</th>
+                <th>Edit Skill</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SkillID</td>
+                    <td>@item.SkillName</td>
+                    <td>@item.SkillPercentage</td>
+                    <td>
+                        @Html.Raw(item.SkillStatus == true ? "<span class='badge badge-success'>Aktif</span>" : "<span class='badge badge-danger'>Pasif</span>")
+                    </td>
+                    <td>
+                        @switch (item.SkillStatus)
+                        {
+                            case true:
+                                <a class="btn btn-danger btn-sm" href="/Skills/DeleteSkill/@item.SkillID">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Pasif Yap
+                                </a>
+                                break;
+                            case false:
+                                <a class="btn btn-success btn-sm" href="/Skills/DeleteSkill/@item.SkillID">
+                                    <i class="fas fa-check">
+                                    </i>
+                                    Aktif Yap
+                                </a>
+                                break;
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-sm" href="/Skills/EditSkill/@item.SkillID" style="color:white;"><i class="fas fa-pen">Düzenle</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+@Html.Action("SkillPartial","Skills")
+<script src="~/Scripts/jquery-3.4.1.intellisense.js"></script>
+
+
+
