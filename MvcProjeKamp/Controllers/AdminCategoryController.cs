@@ -3,10 +3,6 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -14,16 +10,18 @@ namespace MvcProjeKamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
-        [Authorize(Roles="B")]
+        [Authorize(Roles = "B")]
         public ActionResult Index()
         {
             var categoryValues = cm.GetList();
-            
+
             return View(categoryValues);
         }
         [HttpGet]
         public ActionResult AddCategory()
         {
+            TempData["Error"] = "Kayıt başarıyla tamamlandı";
+            TempData["Status"] = "success";
             return View();
         }
         [HttpPost]
@@ -35,14 +33,18 @@ namespace MvcProjeKamp.Controllers
             {
                 cm.CategoryAdd(p);
                 return RedirectToAction("Index");
-            }else
+            }
+            else
             {
-                foreach(var item in results.Errors)
+                foreach (var item in results.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
-                
+
+
             }
+            TempData["Status"] = "danger";
+            TempData["Error"] = "Hatalı giriş yapıldı";
             return View();
 
         }
@@ -64,6 +66,6 @@ namespace MvcProjeKamp.Controllers
             cm.CategoryUpdate(p);
             return RedirectToAction("Index");
         }
-        
+
     }
 }

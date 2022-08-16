@@ -1,0 +1,66 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Kullanıcı Mail</th>
+            <th>Yetki</th>
+            <th>Status</th>
+            <th>Pasif Yap</th>
+            <th>Yetkisini değiştir</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AdminID</td>
+                <td>@item.AdminUserName</td>
+                <td>@item.AdminRole</td>
+                <td> @Html.Raw(item.AdminStatus == true ? "<span class='badge badge-success'>Aktif</span>" : "<span class='badge badge-danger'>Pasif</span>")</td>
+                <td>
+                    @switch (item.AdminStatus)
+                    {
+                        case true:
+                            <a class="btn btn-danger btn-sm" href="/Authorization/DeleteAdmin/@item.AdminID">
+                                <i class="fas fa-trash">
+                                </i>
+                                Pasif Yap
+                            </a>
+                            break;
+                        case false:
+                            <a class="btn btn-success btn-sm" href="/Authorization/DeleteAdmin/@item.AdminID">
+                                <i class="fas fa-check">
+                                </i>
+                                Aktif Yap
+                            </a>
+                            break;
+                    }
+                </td>
+                @if (ViewBag.role == item.AdminRole)
+                {
+
+
+                    <td></td>
+                }
+                else
+                {
+
+                    <td><a href="/Authorization/EditAdmin/@item.AdminID" class="btn btn-warning ">Yetkisini değiştir</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Authorization/AddAdmin" class="btn btn-success">Admin Ekle</a>
+
+
+

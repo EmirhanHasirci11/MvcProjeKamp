@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
 {
+    [AllowAnonymous]
     public class ErrorPageController : Controller
     {
-        
+
         //public ActionResult Page403()
         //{
         //    Response.StatusCode = 403;

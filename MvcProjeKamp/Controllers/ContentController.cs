@@ -1,9 +1,5 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -15,9 +11,22 @@ namespace MvcProjeKamp.Controllers
         {
             return View();
         }
+        public ActionResult GetAllContent(string p)
+        {
+            var values = cm.GetList();
+            if (p != null)
+            {
+                values = cm.GetList(p);
+                return View(values);
+            }
+            else
+            {
+                return View(values);
+            }
+        }
         public ActionResult GetContentByHeading(int id)
         {
-            var contentValue= cm.GetListById(id);
+            var contentValue = cm.GetListById(id);
             return View(contentValue);
         }
     }

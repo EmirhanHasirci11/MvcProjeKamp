@@ -1,10 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -30,7 +26,7 @@ namespace MvcProjeKamp.Controllers
         }
         public ActionResult ChangeStatus(int id)
         {
-           var aboutChange= abm.GetById(id);
+            var aboutChange = abm.GetById(id);
             if (aboutChange.AboutStatus == true)
             {
                 aboutChange.AboutStatus = false;

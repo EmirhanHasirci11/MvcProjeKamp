@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "EditAdmin";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Admin Yetki Değiştir</h2>
+<html>
+<head>
+
+</head>
+<body>
+    @using (Html.BeginForm("EditAdmin", "Authorization", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(x=>x.AdminID)
+            @Html.HiddenFor(x => x.AdminPassword)
+            @Html.HiddenFor(x=>x.PasswordSalt)
+            @Html.Label("Admin Kullanıcı adı")
+            @Html.TextBoxFor(x=>x.AdminUserName,new {@class="form-control",@readonly="readonly" })
+            <br />
+            @Html.Label("Admin rolü")
+            @Html.DropDownListFor(x=>x.AdminRole,(List<SelectListItem>)ViewBag.roles,new {@class="form-control" })
+
+
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    }
+</body>
+</html>
+

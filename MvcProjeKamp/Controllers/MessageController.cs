@@ -5,9 +5,6 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -20,13 +17,15 @@ namespace MvcProjeKamp.Controllers
         DraftManager dm = new DraftManager(new EFDraftDal());
         public ActionResult Inbox()
         {
-            ViewBag.messageStatusIsFalse = c.Messages.Where(x => x.MessageStatus == false&&x.ReceiverMail=="admin@gmail.com").Count();
-            var messageValues = mm.GetListInbox();
+            string p = (string)Session["AdminUserName"];
+            ViewBag.messageStatusIsFalse = mm.GetUnreadMessage(p);
+            var messageValues = mm.GetListInbox(p);
             return View(messageValues);
         }
         public ActionResult Sendbox()
         {
-            var senderValues = mm.GetListSendbox();
+            string p = (string)Session["AdminUserName"];
+            var senderValues = mm.GetListSendbox(p);
             return View(senderValues);
         }
         [HttpGet]
@@ -41,10 +40,10 @@ namespace MvcProjeKamp.Controllers
         [ActionName("DraftMessage")]
         public ActionResult NewMessage(Draft d)
         {
-            
+
             var value = new Message();
-            mm.DraftToMessage(d,value);
-            
+            mm.DraftToMessage(d, value);
+
             return NewMessage(value);
         }
         [HttpPost]
@@ -56,16 +55,16 @@ namespace MvcProjeKamp.Controllers
             ValidationResult results = mv.Validate(p);
             if (results.IsValid)
             {
-
+                string mail = (string)Session["AdminUserName"];
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                mm.MessageAdd(p);
+                mm.MessageAdd(p, mail);
                 return RedirectToAction("Sendbox");
             }
             else
             {
-                foreach(var item in results.Errors)
+                foreach (var item in results.Errors)
                 {
-                  ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
                 TempData["ModelState"] = ModelState;
             }

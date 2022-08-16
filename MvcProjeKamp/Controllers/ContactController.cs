@@ -2,10 +2,7 @@
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -24,14 +21,15 @@ namespace MvcProjeKamp.Controllers
         {
             var contactValues = cm.getByID(id);
             return View(contactValues);
-        } 
+        }
         public PartialViewResult MessageListMenu()
         {
-            ViewBag.DraftMessages = c.Drafts.Where(x => x.SenderMail == "admin@gmail.com"&&x.DraftStatus==true).Count();
+            string p = (string)Session["AdminUserName"];
+            ViewBag.DraftMessages = c.Drafts.Where(x => x.SenderMail == p && x.DraftStatus == true).Count();
             ViewBag.adminMessageCount = cm.GetList().Count();
-            ViewBag.senderMessageCount = c.Messages.Where(x => x.SenderMail == "admin@gmail.com").Count();
-            ViewBag.recieverMessageCount = c.Messages.Where(x => x.ReceiverMail == "admin@gmail.com").Count();
-           
+            ViewBag.senderMessageCount = c.Messages.Where(x => x.SenderMail == p).Count();
+            ViewBag.recieverMessageCount = c.Messages.Where(x => x.ReceiverMail == p).Count();
+
             return PartialView();
         }
     }

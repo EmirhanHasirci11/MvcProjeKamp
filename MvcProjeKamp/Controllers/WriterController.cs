@@ -3,10 +3,6 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -29,7 +25,7 @@ namespace MvcProjeKamp.Controllers
         [HttpPost]
         public ActionResult AddWriter(Writer p)
         {
-           
+
             ValidationResult results = validationRules.Validate(p);
             if (results.IsValid)
             {
@@ -38,7 +34,7 @@ namespace MvcProjeKamp.Controllers
             }
             else
             {
-                foreach(var item in results.Errors)
+                foreach (var item in results.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
@@ -72,6 +68,6 @@ namespace MvcProjeKamp.Controllers
 
             return View();
         }
-      
+
     }
 }

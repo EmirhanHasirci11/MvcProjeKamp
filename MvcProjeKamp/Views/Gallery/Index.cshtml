@@ -2,9 +2,8 @@
 @model List<ImageFile>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    Layout = "~/Views/Shared/_galleryBugFixLayout.cshtml";
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +31,9 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Sözlük Galerisi</h1>
+                    <h4>Fatih Deniz Bey'e açık ve anlaşılır bir dil ile nasıl dosya yükleneceğini projesinde gösterdiği için teşekkürler</h4>
                 </div>
-                
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -50,18 +50,25 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                @foreach(var item in Model)
-            {
+                                @foreach (var item in Model)
+                                {
 
-                                <div class="col-sm-2">
-                                    <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery" style="text-align:center">
-                                        <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" />
-                                    </a>
-                                </div>
-            }
+                                    <div class="col-sm-2">
+                                        <div>
+                                            <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+                                                <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" style="height: 150px; width: 400px;" />
+                                            </a>
+                                        </div>
+                                        <div style="text-align: center">
+
+                                            <a href="/Gallery/DeleteImage/@item.ImageID" class="btn btn-danger">Sil</a>
+                                        </div>
+                                        <br />
+                                    </div>
+                                }
 
 
-                               
+
                             </div>
                         </div>
                     </div>
@@ -69,19 +76,19 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
+    <a href="/Gallery/AddImage" class="btn btn-outline-info">Yeni Resim Ekle </a>
     <!-- /.content -->
     <!-- /.content-wrapper -->
-    
     <!-- Control Sidebar -->
-    
-    <!-- /.control-sidebar -->
+    <!-- AdminLTE -->
+    <!-- OPTIONAL SCRIPTS -->
     <!-- ./wrapper -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery UI -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Ekko Lightbox -->
     <script src="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
     <!-- AdminLTE App -->
@@ -92,7 +99,7 @@
     <script src="~/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function () {
+        $(function () {
             $(document).on('click', '[data-toggle="lightbox"]', function (event) {
                 event.preventDefault();
                 $(this).ekkoLightbox({

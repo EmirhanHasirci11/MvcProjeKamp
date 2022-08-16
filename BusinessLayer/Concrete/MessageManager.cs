@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace BusinessLayer.Concrete
     public class MessageManager : IMessageService
     {
         IMessageDal _messageDal;
+        Context c = new Context();
 
         public MessageManager(IMessageDal messageDal)
         {
@@ -34,18 +36,24 @@ namespace BusinessLayer.Concrete
             return _messageDal.GetByID(x => x.MessageID == id);
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.ReceiverMail ==p );
         }
 
-        public List<Message> GetListSendbox()
+        public List<Message> GetListSendbox(string p)
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == p);
         }
 
-        public void MessageAdd(Message message)
+        public int GetUnreadMessage(string p)
         {
+            return c.Messages.Where(x => x.MessageStatus == false && x.ReceiverMail==p).Count();
+        }
+
+        public void MessageAdd(Message message, string mail)
+        {
+            message.SenderMail = mail;
             _messageDal.Insert(message);
         }
 

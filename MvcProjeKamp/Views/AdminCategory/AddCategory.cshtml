@@ -15,8 +15,15 @@
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription)
         <br /><br />
-        <button class="btn btn-outline-primary">Kaydet</button>
+        <button class="btn btn-outline-primary" id="btn3" >Kaydet</button>
     </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    $('#btn3').click(function () {
+        swal("MVC Proje Kampı", "@TempData["Error"]", "@TempData["Status"]")
+    });
+</script>
 }
 
 

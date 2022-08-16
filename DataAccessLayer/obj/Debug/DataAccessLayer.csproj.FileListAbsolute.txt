@@ -9,12 +9,7 @@ C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\bin\Debug\EntityLayer.d
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\bin\Debug\EntityFramework.xml
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
-C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
-C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.dll
-C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig1.resources
-C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_writer_edit.resources
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_writertittle_add.resources
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig_.resources
@@ -36,3 +31,10 @@ C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLay
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations._about_aboutStatus_added.resources
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations._draft_table_added.resources
 C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations._Skill_SkillStatus_added.resources
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations._admin_AdminStatus_added.resources
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\emir_\source\repos\MvcProjeKamp\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations._ImageFile_DateAdded.resources

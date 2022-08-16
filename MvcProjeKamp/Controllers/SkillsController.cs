@@ -1,10 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKamp.Controllers
@@ -41,12 +37,12 @@ namespace MvcProjeKamp.Controllers
             return RedirectToAction("AdminSkillList");
         }
         [HttpGet]
-        public ActionResult AddSkill ()
+        public ActionResult AddSkill()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult AddSkill (Skill p)
+        public ActionResult AddSkill(Skill p)
         {
             p.SkillStatus = true;
             sm.SkillAdd(p);

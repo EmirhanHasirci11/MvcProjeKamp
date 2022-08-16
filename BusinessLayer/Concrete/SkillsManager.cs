@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
             return _skillDal.List();
         }
 
+        public List<Skill> GetListAllPercentage()
+        {
+            return _skillDal.List();
+        }
+
         public void SkillAdd(Skill skill)
         {
             _skillDal.Insert(skill);

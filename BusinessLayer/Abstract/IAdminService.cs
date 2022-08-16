@@ -16,5 +16,11 @@ namespace BusinessLayer.Abstract
         void AdminUpdate(Admin admin);
         string AdminGenerateSalt();
         Admin AdminUsername(Admin p);
+        List<Admin> GetListAdmins();
+        void AdminDelete(Admin p);
+        Admin GetById(int id);
+        string AdminRole(string AdminUserName);
+        List<Admin> GetListAdminsByRole(string role);
+        
     }
 }

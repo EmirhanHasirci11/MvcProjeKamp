@@ -164,6 +164,14 @@
     <Compile Include="Migrations\202208090032395__Skill_SkillStatus_added.designer.cs">
       <DependentUpon>202208090032395__Skill_SkillStatus_added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202208141315471__admin_AdminStatus_added.cs" />
+    <Compile Include="Migrations\202208141315471__admin_AdminStatus_added.designer.cs">
+      <DependentUpon>202208141315471__admin_AdminStatus_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208152332061__ImageFile_DateAdded.cs" />
+    <Compile Include="Migrations\202208152332061__ImageFile_DateAdded.designer.cs">
+      <DependentUpon>202208152332061__ImageFile_DateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -243,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208090032395__Skill_SkillStatus_added.resx">
       <DependentUpon>202208090032395__Skill_SkillStatus_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208141315471__admin_AdminStatus_added.resx">
+      <DependentUpon>202208141315471__admin_AdminStatus_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208152332061__ImageFile_DateAdded.resx">
+      <DependentUpon>202208152332061__ImageFile_DateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

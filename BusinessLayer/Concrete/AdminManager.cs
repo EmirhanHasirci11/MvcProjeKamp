@@ -71,5 +71,40 @@ namespace BusinessLayer.Concrete
             plainPass = plainPass + salt;
             return Crypto.VerifyHashedPassword(hashedPass, plainPass);
         }
+
+        public List<Admin> GetListAdmins()
+        {
+            return _adminDal.List();
+        }
+
+        public void AdminDelete(Admin p)
+        {
+            if (p.AdminStatus == true)
+            {
+                p.AdminStatus = false;
+            }
+            else
+            {
+                p.AdminStatus = true;
+            }
+            AdminUpdate(p);
+        }
+
+        public Admin GetById(int id)
+        {
+            return _adminDal.GetByID(x=>x.AdminID==id);
+        }
+
+        public string AdminRole(string AdminUserName)
+        {
+            
+            var admin = _adminDal.GetByID(x => x.AdminUserName == AdminUserName);
+            return admin.AdminRole;
+        }
+
+        public List<Admin> GetListAdminsByRole(string role)
+        {
+            return _adminDal.List(x=>x.AdminRole==role);
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace BusinessLayer.Abstract
 
         List<Skill> GetList();
         List<Skill> GetListAll();
+        List<Skill> GetListAllPercentage();
         void SkillAdd(Skill skill);
         Skill GetById(int id);
         void SkillDelete(Skill skill);
